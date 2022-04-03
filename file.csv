@@ -1,0 +1,5 @@
+"Ticket ID,Description,Status,Priority,""Agent ID"",""Agent Name"",""Agent Email"",""Contact ID"",""Contact Name"",""Contact Email"",""Group ID"",""Group Name"",""Company ID"",""Company Name"",Comments"
+"ID,""Статус"",""Тема"",""Инициатор"",""Запрошен"",""Тип"",""Приоритет"""
+"1,""Открыт"",""Образец тикета: Что такое тикет"",""Клиент"",""2022-04-01 18:54"",""Инцидент"",""Нормальный"""
+"2,""Открыт"",""TestTheme"",""David"",""2022-04-01 18:59"",""'-"",""'-"""
+"3,""Открыт"",""NewTicket"",""David"",""2022-04-01 19:04"",""'-"",""'-"""
