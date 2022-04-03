@@ -12,14 +12,6 @@ $response  = $client->request('GET', 'https://testcompanie1265.zendesk.com/api/v
    // 'auth' => ['username' => 'davidbarba608@gmail.com', 'password' => 'david13579barba2468']
 
 ]);*/
-$subdomain = "testcompanie1265";
-$username  = "davidbarba608@gmail.com"; // replace this with your registered email
-$token     = "CYawgbU2XiVzjVWPM64qlTBULg12Ws8rx6fBLJcJ"; // replace this with your token
-
-$client = new ZendeskAPI($subdomain);
-$client->setAuth('basic', ['username' => $username, 'token' => $token]);
-$tickets = $client->tickets()->findAll();
-
 /*
 echo $response ->getStatusCode();
 // "200"
@@ -30,11 +22,16 @@ print_r($response->json());
 // {"type":"User"...'
 */
 
+$subdomain = "testcompanie1265";
+$username  = "davidbarba608@gmail.com"; 
+$token     = "CYawgbU2XiVzjVWPM64qlTBULg12Ws8rx6fBLJcJ"; 
 
-
-//$data = json_decode(json_encode($tickets));
+$client = new ZendeskAPI($subdomain);
+$client->setAuth('basic', ['username' => $username, 'token' => $token]);
+$tickets = $client->tickets()->findAll();
 
 print_r($tickets);
+
 $headers=array("Ticket ID","Description","Status","Priority","Agent ID","Agent Name","Agent Email","Contact ID","Contact Name","Contact Email","Group ID","Group Name","Company ID","Company Name","Comments");
 $fh=fopen("file.csv",'w');
 fputcsv($fh,$headers);
@@ -43,14 +40,6 @@ $data=array(
 );
 foreach ($data as $line)
 {
-    fputcsv($fh,$line);
-}
-
-
-
-foreach ($data as $line)
-{
-    echo gettype($line);
     fputcsv($fh,$line);
 }
 fclose($fh);
